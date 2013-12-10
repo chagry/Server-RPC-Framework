@@ -1,5 +1,6 @@
 ![logo](img/logo.jpg)
-consult the website [Chagry](http://chagry.fr/)
+
+Consult the website [Chagry](http://chagry.fr/)
 
 ## Documentation
 
