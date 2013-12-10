@@ -1,0 +1,33 @@
+# @version		0.4
+# @date Crea	08/10/2013.
+# @date Modif	08/10/2013.
+# @package		.htaccess
+# @contact		Chagry.fr - git@chagry.fr
+
+SetEnv PHP_VER 5
+
+RewriteEngine On
+# Block base64_encode.
+RewriteCond %{QUERY_STRING} base64_encode.*\(.*\) [OR]
+# Block <script> tag.
+RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+# Block PHP GLOBALS.
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+# Block _REQUEST.
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+# return index if error!
+RewriteRule ^(.*)$ index.php [F,L]
+
+# Delete www.
+RewriteCond %{HTTP_HOST} !^[a-z-].[a-z]{2,6} [NC]
+RewriteCond %{HTTP_HOST} ([a-z-]+.[a-z0-9]{2,6})$ [NC]
+RewriteRule ^(.*)$ http://%1/SOUS/DOC/$1 [R=301,L]
+
+# if doc or file, Not redirect.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/index.php
+RewriteRule (.*) index.php
+
+php_flag allow_url_fopen on
+php_flag allow_url_include on
