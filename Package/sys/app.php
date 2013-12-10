@@ -41,7 +41,7 @@ class app
 				if(config::sys('off')!=1) {
 					
 					// Exception.
-					throw new Exception('app-maintenance');
+					throw new Exception('SERV-ERROR-OFFLINE-MESSAGE');
 				}
 				
 				// method post.
@@ -79,7 +79,7 @@ class app
 				}
 				
 				// Exception.
-				else throw new Exception('methode-ou-param-incorrect');
+				else throw new Exception('SERV-ERROR-INVALID-PARAM-OR-METHODE');
 			}
 			
 			catch (Exception $e) {

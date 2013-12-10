@@ -16,7 +16,7 @@ class load {
 	public static function auto($className) {
 	
 		$demande = str_replace('_','/',$className).'.php';
-		if (!is_file($demande)) throw new Exception('er-chargement-fichier');
+		if (!is_file($demande)) throw new Exception('SERV-ERROR-NOT-FIND-FILE');
 		else require_once $demande;
 	}
 }

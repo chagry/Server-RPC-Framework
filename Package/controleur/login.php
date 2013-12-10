@@ -44,21 +44,21 @@ class login {
 				// if user bloker.
 				else {
 					sleep(2);
-					throw new Exception('compte-bloque-contact');
+					throw new Exception('SERV-ERROR-USER-BLACKLISTED');
 				}
 			}
 			
 			// if not user db.
 			else {
 				sleep(2);
-				throw new Exception('mail-utilisateur-incorrect');
+				throw new Exception('LOGIN-ERROR-MAIL-INVALID');
 			}
 		}
 		
 		// if mail non valide.
 		else {
 			sleep(2);
-			throw new Exception('ad-email-pas-valide');
+			throw new Exception('LOGIN-ERROR-INVALID-MAIL');
 		}
 		
 		// return result.
@@ -169,14 +169,14 @@ class login {
 			// Password non valide.
 			else {
 				sleep(2);
-				throw new Exception('pass-non-valide');
+				throw new Exception('LOGIN-ERROR-INVALID-CODE');
 			}
 		}
 		
 		// mail non valide.
 		else {
 			sleep(2);
-			throw new Exception('pass-session-non-valide');
+			throw new Exception('LOGIN-ERROR-INVALID-CODE-OR-SESSION');
 		}
 		
 		// return result.
@@ -214,7 +214,7 @@ class login {
 		}
 		
 		// Password non valide.
-		else throw new Exception('pass-session-non-valide');
+		else throw new Exception('LOGIN-ERROR-INVALID-CODE-OR-SESSION');
 		
 		// Retourner le resulta.
 		return $tmp;
@@ -341,15 +341,15 @@ class login {
 		    	}
 				
 				// if user erreur.
-				else throw new Exception('er-inscription');
+				else throw new Exception('LOGIN-ERROR-REGISTRATION-FAILED');
 			}
 			
 			// if user not in db.
-			else throw new Exception('compte-mail-existe');
+			else throw new Exception('LOGIN-ERROR-MAIL-MESSAGE');
 		}
 		
 		// if mail non valide.
-		else throw new Exception('ad-email-pas-valide');
+		else throw new Exception('LOGIN-ERROR-INVALID-MAIL');
 		
 		// return result.
 		return $tmp;
@@ -459,11 +459,11 @@ class login {
 			}
 			
 			// user in db.
-			else throw new Exception('mail-utilisateur-incorrect');
+			else throw new Exception('LOGIN-ERROR-MAIL-INVALID');
 		}
 		
 		// if mail non valide.
-		else throw new Exception('ad-email-pas-valide');
+		else throw new Exception('LOGIN-ERROR-INVALID-MAIL');
 		
 		// return result.
 		return $tmp;
@@ -505,7 +505,7 @@ class login {
 					}
 					
 					// if not unser in db.
-					else throw new Exception('compte-mail-existe');
+					else throw new Exception('LOGIN-ERROR-MAIL-MESSAGE');
 					break;
 					
 				case 'security':
@@ -521,12 +521,12 @@ class login {
 					break;
 					
 				default:
-					throw new Exception('not-mail-config');
+					throw new Exception('LOGIN-ERROR-MAIL-UNKNOWN-PARAM');
 			}
 		}
 		
 		// if mail non valide.
-		else throw new Exception('ad-email-pas-valide');
+		else throw new Exception('LOGIN-ERROR-INVALID-MAIL');
 		
 		// Enregistre log.
 		archive::acte('modif-mail-'.$eConf, json_encode($req));

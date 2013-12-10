@@ -35,7 +35,7 @@ class db {
 			}
 			
 			// Exception.
-			catch(Exception $e) { throw new Exception('er-base-de-donnee'); }
+			catch(Exception $e) { throw new Exception('SERV-ERROR-CONNECT-MYSQL'); }
 		}
 	}
 	

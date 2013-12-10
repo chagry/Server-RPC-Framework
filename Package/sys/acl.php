@@ -56,10 +56,10 @@ class acl {
 		if(!self::compart($userRole, $aliasRegle)){
 		
 			// if user connect.
-			if(user::noGuest()) throw new Exception('pas-autor-acced-ressource');
+			if(user::noGuest()) throw new Exception('SERV-ERROR-ACCESS-DENIED');
 			
 			// else user not connect.
-			else throw new Exception('pas-acced-page-conne-avant');
+			else throw new Exception('SERV-ERROR-ACCESS-NO-CONNECT');
 		}
 	}
 	
@@ -92,15 +92,15 @@ class acl {
 				if(in_array(self::$listRegle[$c][$a], self::$listRole)) return self::$listRegle[$c][$a];
 				
 				// Exception.
-				else throw new Exception('role-no-valide');
+				else throw new Exception('SERV-ERROR-INVALID-ROLE');
 			}
 			
 			// Exception.
-			else throw new Exception('action-no-valide');	
+			else throw new Exception('SERV-ERROR-INVALID-ACTION');	
 		}
 		
 		// Exception.
-		else throw new Exception('control-no-valide');
+		else throw new Exception('SERV-ERROR-INVALID-CONTROLLER');
 	}
 	
 	/*

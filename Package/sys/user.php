@@ -66,7 +66,7 @@ class user {
 			}
 			
 			// else user bloked.
-			else throw new Exception('compte-bloque-contact');
+			else throw new Exception('SERV-ERROR-USER-BLACKLISTED');
 		}
 	}
 }

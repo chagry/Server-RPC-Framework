@@ -73,7 +73,7 @@ class session {
 			dbSys::setNewSession($req);
 		}
 		
-		catch (Exception $e) { throw new Exception('er-session-connecter'); }
+		catch (Exception $e) { throw new Exception('SERV-ERROR-SESSION'); }
 		
 		return $idSess;
 	}
@@ -117,11 +117,11 @@ class session {
 			}
 			
 			// Exception.
-			else throw new Exception('session-expire-connecter');
+			else throw new Exception('SERV-ERROR-SESSION-EXPIRE');
 		}
 		
 		// Exception.
-		catch (Exception $e) { throw new Exception('session-expire-connecter'); }
+		catch (Exception $e) { throw new Exception('SERV-ERROR-SESSION-EXPIRE'); }
 		
 		return $idSess;
 	}

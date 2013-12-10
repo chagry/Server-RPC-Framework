@@ -36,7 +36,7 @@ class dbSys {
 			return $arrTmp;
 		}
 	
-		catch(Exception $e) { throw new Exception('er-base-de-donnee'); }
+		catch(Exception $e) { throw new Exception('SERV-ERROR-DATABASE'); }
 	}
 	
 	/*
@@ -57,7 +57,7 @@ class dbSys {
 			$req->closeCursor();
 		}
 	
-		catch(Exception $e) { throw new Exception('er-base-de-donnee'); }
+		catch(Exception $e) { throw new Exception('SERV-ERROR-DATABASE'); }
 	}
 	
 	/*
@@ -84,7 +84,7 @@ class dbSys {
 			return $arrTmp;
 		}
 	
-		catch(Exception $e) { throw new Exception('er-base-de-donnee'); }
+		catch(Exception $e) { throw new Exception('SERV-ERROR-DATABASE'); }
 	}
 	
 	/*
@@ -105,7 +105,7 @@ class dbSys {
 			$req->closeCursor();
 		}
 	
-		catch(Exception $e) { throw new Exception('er-base-de-donnee'); }
+		catch(Exception $e) { throw new Exception('SERV-ERROR-DATABASE'); }
 	}
 	
 	/*
@@ -126,7 +126,7 @@ class dbSys {
 			$req->closeCursor();
 		}
 	
-		catch(Exception $e) { throw new Exception('er-base-de-donnee'); }
+		catch(Exception $e) { throw new Exception('SERV-ERROR-DATABASE'); }
 	}
 	
 	/*
@@ -149,7 +149,7 @@ class dbSys {
 			$req->closeCursor();
 		}
 	
-		catch(Exception $e) { throw new Exception('er-base-de-donnee'); }
+		catch(Exception $e) { throw new Exception('SERV-ERROR-DATABASE'); }
 	}
 	
 	/*
@@ -183,7 +183,7 @@ class dbSys {
 			return $arrTmp;
 		}
 	
-		catch(Exception $e) { throw new Exception('er-base-de-donnee'); }
+		catch(Exception $e) { throw new Exception('SERV-ERROR-DATABASE'); }
 	}
 	
 	/*
@@ -208,7 +208,7 @@ class dbSys {
 			$req->closeCursor();
 		}
 	
-		catch(Exception $e) { throw new Exception('er-base-de-donnee'); }
+		catch(Exception $e) { throw new Exception('SERV-ERROR-DATABASE'); }
 	}
 	
 	/*
@@ -229,7 +229,7 @@ class dbSys {
 			$req->closeCursor();
 		}
 	
-		catch(Exception $e) { throw new Exception('er-base-de-donnee'); }
+		catch(Exception $e) { throw new Exception('SERV-ERROR-DATABASE'); }
 	}
 	
 	/*
@@ -250,7 +250,7 @@ class dbSys {
 			$req->closeCursor();
 		}
 	
-		catch(Exception $e) { throw new Exception('er-base-de-donnee'); }
+		catch(Exception $e) { throw new Exception('SERV-ERROR-DATABASE'); }
 	}
 	
 	/*
@@ -271,7 +271,7 @@ class dbSys {
 			$req->closeCursor();
 		}
 	
-		catch(Exception $e) { throw new Exception('er-base-de-donnee'); }
+		catch(Exception $e) { throw new Exception('SERV-ERROR-DATABASE'); }
 	}
 	
 	/*
@@ -292,7 +292,7 @@ class dbSys {
 			$req->closeCursor();
 		}
 	
-		catch(Exception $e) { throw new Exception('er-base-de-donnee'); }
+		catch(Exception $e) { throw new Exception('SERV-ERROR-DATABASE'); }
 	}
 }
 ?>
