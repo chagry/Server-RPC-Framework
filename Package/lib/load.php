@@ -10,7 +10,7 @@
 class load {
 	
 	/*
-	 * Function auto().
+	 * Function auto(). 0.4
 	 * @param $className.
 	 */ 
 	public static function auto($className) {

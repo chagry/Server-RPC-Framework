@@ -10,7 +10,7 @@
 class valide
 {
 	/*
-	 * Function email().
+	 * Function email(). 0.4
 	 * @param. mail.
 	 * @return boolean TRUE or FALSE. 
 	 */
@@ -28,7 +28,7 @@ class valide
 	}
 	
 	/*
-	 * Function strMd5().
+	 * Function strMd5(). 0.4
 	 * @param. String md5.
 	 * @return boolean TRUE or FALSE. 
 	 */
@@ -46,7 +46,7 @@ class valide
 	}
 	
 	/*
-	 * Function strSha1().
+	 * Function strSha1(). 0.4
 	 * @param. String Sha1.
 	 * @return boolean TRUE or FALSE. 
 	 */

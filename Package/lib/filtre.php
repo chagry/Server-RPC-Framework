@@ -10,7 +10,7 @@
 class filtre {
 
 	/*
-	 * Function base().
+	 * Function base(). 0.4
 	 * @param. String.
 	 * @return $str. 
 	 */
@@ -28,7 +28,7 @@ class filtre {
 	}
 	
 	/*
-	 * Function rands().
+	 * Function rands(). 0.4
 	 * @param. nuber.
 	 * @return $number. 
 	 */

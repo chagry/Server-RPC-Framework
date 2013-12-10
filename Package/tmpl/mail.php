@@ -11,9 +11,6 @@ defined('CHAG') or die('Acces interdit');
 
 class tmplMail {
 	
-	/*
-	 * Function star.
-	 */
 	public static function start($e) {
 		
 		// add header.
