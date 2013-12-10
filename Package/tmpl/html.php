@@ -25,7 +25,7 @@ class html {
 		$tmp.='</head>';
 		$tmp.='<body>';
 		
-			$tmp.='<img src="public/img/logo.png" width="100%">';
+			$tmp.='<img src="public/img/logo.png" width="70%">';
 			
 		$tmp.='</body>';
 		$tmp.='</html>';
