@@ -4,7 +4,7 @@ Consult the website [Chagry](http://chagry.fr/)
 
 ## Documentation
 
-* PHP Framework for JSON RPC 2 Server [ ![fr](img/fr.gif) ](Doc/RPC_SERVER_FR.md)
+* Release for 2016
 
 ## License
 
