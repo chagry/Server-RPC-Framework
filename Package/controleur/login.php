@@ -131,7 +131,7 @@ class login {
 						));
 						
 						// Enregistre log.
-						archive::acte('EditLangue', $arch, user::id(), session::id());
+						archive::acte('DEF-EDITE-LANGUE-USER', $arch, user::id(), session::id());
 					}
 				}
 				
