@@ -529,7 +529,7 @@ class login {
 		else throw new Exception('LOGIN-ERROR-INVALID-MAIL');
 		
 		// Enregistre log.
-		archive::acte('modif-mail-'.$eConf, json_encode($req));
+		archive::acte('DEF-EDITE-MAIL-'.$eConf, json_encode($req));
 		
 		// add info for archive
 		$req['date']=date("U");
