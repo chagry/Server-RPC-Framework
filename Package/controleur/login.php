@@ -163,7 +163,7 @@ class login {
 				dbSys::setTimeSession($req, 'valide');
 				
 				// Enregistre log.
-				archive::acte('login', $tmpUser, user::id(), session::id());
+				archive::acte('DEF-LOGIN', $tmpUser, user::id(), session::id());
 			}
 			
 			// Password non valide.
@@ -334,7 +334,7 @@ class login {
 					}
 					
 					// Enregistre log.
-					archive::acte('signUp', json_encode($req), $tmpUser['id'], '0');
+					archive::acte('DEF-SIGNUP', json_encode($req), $tmpUser['id'], '0');
 						    
 					// return reponse.
 					$tmp['valide']='ok';
@@ -452,7 +452,7 @@ class login {
 				}
 				
 				// Enregistre log.
-				archive::acte('forgotPin', json_encode($req), $tmpUser['id'], '0');
+				archive::acte('DEF-CODE-PIN-RESET', json_encode($req), $tmpUser['id'], '0');
 				
 				// return reponse.
 				$tmp['valide']='ok';
