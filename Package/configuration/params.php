@@ -17,7 +17,7 @@ class params {
 		 * sys.
 		 */
 		config::addParams('sys', 'off', 1);
-		config::addParams('sys', 'lang', 'en,fr,ru,de');
+		config::addParams('sys', 'lang', 'en,fr');
 		config::addParams('sys', 'path', 'http://domain.com/doc/');
 		config::addParams('sys', 'media', 'http://domaine.com/doc/public/');
 		config::addParams('sys', 'support', 'mail@domain.com');
