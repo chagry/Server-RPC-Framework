@@ -1,10 +1,12 @@
-# @version		0.4
+# @version		0.5 Server.
 # @date Crea	08/10/2013.
-# @date Modif	08/10/2013.
+# @date Modif	11/02/2014.
 # @package		.htaccess
-# @contact		Chagry.fr - git@chagry.fr
+# @contact		Chagry.com - git@chagry.com
 
 SetEnv PHP_VER 5
+php_flag allow_url_fopen on
+php_flag allow_url_include on
 
 RewriteEngine On
 # Block base64_encode.
@@ -16,18 +18,25 @@ RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
 # Block _REQUEST.
 RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
 # return index if error!
-RewriteRule ^(.*)$ index.php [F,L]
-
-# Delete www.
-RewriteCond %{HTTP_HOST} !^[a-z-].[a-z]{2,6} [NC]
-RewriteCond %{HTTP_HOST} ([a-z-]+.[a-z0-9]{2,6})$ [NC]
-RewriteRule ^(.*)$ http://%1/SOUS/DOC/$1 [R=301,L]
+RewriteRule ^(.*)$ index.html [F,L]
 
 # if doc or file, Not redirect.
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !^/index.php
-RewriteRule (.*) index.php
+RewriteCond %{REQUEST_URI} !^/index.html
+RewriteRule (.*) index.html
 
-php_flag allow_url_fopen on
-php_flag allow_url_include on
+# Delete www.
+RewriteCond %{HTTP_HOST} ^www\.domain\.com/doc [NC]
+RewriteCond %{HTTP_HOST} !^$
+RewriteRule ^/?(.*) http://domain.com/doc/$1 [L,R,NE]
+
+# On https.
+# RewriteCond %{HTTPS} !=on [OR]
+# RewriteCond %{SERVER_PORT} 80
+# RewriteRule ^/?(.*) https://domain.com/doc/$1 [R,L]
+
+# Off https.
+# RewriteCond %{HTTPS} =on [OR]
+# RewriteCond %{SERVER_PORT} 443
+# RewriteRule ^/?(.*) http://domain.com/doc/$1 [R,L]
