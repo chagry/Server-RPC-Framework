@@ -1,10 +1,10 @@
 <?php
 /*
- * @version		0.4
+ * @version		0.5
  * @date Crea	26/04/2013.
- * @date Modif	01/12/2013.
+ * @date Modif	12/02/2014.
  * @package		model_dbSys.php
- * @contact		Chagry.fr - git@chagry.fr
+ * @contact		Chagry.com - git@chagry.com
  */
 
 defined('CHAG') or die('Acces interdit');

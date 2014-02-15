@@ -1,10 +1,10 @@
 <?php
 /*
- * @version		0.4
+ * @version		0.5
  * @date Crea	26/04/2013.
- * @date Modif	04/10/2013.
+ * @date Modif	12/02/2014.
  * @package		sys_session.php
- * @contact		Chagry.fr - git@chagry.fr
+ * @contact		Chagry.com - git@chagry.com
  */
 
 defined('CHAG') or die('Acces interdit');
@@ -51,7 +51,7 @@ class session {
 	public static function news($e='') {
 	
 		// New id session.
-		$idSess = md5(rand(0,320000000));
+		$idSess = md5(util::rands(15));
 		
 		try {
 		
@@ -105,8 +105,8 @@ class session {
 				// Start user class.
 				user::start($tmpUser);
 				
-				// Add 30mn new date.
-				$dateFuture = $dateNew->getTimestamp()+1800;
+				// Add config time session.
+				$dateFuture = $dateNew->getTimestamp()+config::sys('tmpSession');
 				
 				// req.
 				$req=array('date' => $dateFuture,

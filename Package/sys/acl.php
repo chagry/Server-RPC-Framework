@@ -1,10 +1,10 @@
 <?php
 /*
- * @version		0.4
+ * @version		0.5
  * @date Crea	26/04/2013.
- * @date Modif	04/10/2013.
+ * @date Modif	12/02/2014.
  * @package		sys_acl.php
- * @contact		Chagry.fr - git@chagry.fr
+ * @contact		Chagry.com - git@chagry.com
  */
 
 defined('CHAG') or die('Acces interdit');
@@ -24,7 +24,7 @@ class acl {
 	public static function addRole($r) {
 	
 		// Add role.
-		self::$listRole[]=filtre::base($r);
+		self::$listRole[]=util::filtre($r);
 	}
 	
 	/*
@@ -36,7 +36,7 @@ class acl {
 	public static function addRegle($c, $a, $r) {
 	
 		// Add regle.
-		self::$listRegle[filtre::base($c)][filtre::base($a)]=filtre::base($r);
+		self::$listRegle[util::filtre($c)][util::filtre($a)]=util::filtre($r);
 	}
 	
 	/*

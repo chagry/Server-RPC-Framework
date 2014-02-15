@@ -1,10 +1,10 @@
 <?php
 /*
- * @version		0.4
+ * @version		0.5
  * @date Crea	26/04/2013.
- * @date Modif	23/11/2013.
+ * @date Modif	12/02/2014.
  * @package		sys_email.php
- * @contact		Chagry.fr - git@chagry.fr
+ * @contact		Chagry.com - git@chagry.com
  */
 
 defined('CHAG') or die('Acces interdit');
@@ -22,7 +22,7 @@ class email {
 	public static function start() {
 		
 		// Class phpmailer.
-		load::auto('librairie_phpmailer_class.phpmailer');
+		load::auto('lib_class.phpmailer');
 		
 		// Instancier la class de librairie phpmailer.
 		self::$mailer = new PHPmailer();
@@ -36,7 +36,7 @@ class email {
 		// Les caracter encoding.
 		self::$mailer->CharSet = "UTF-8";
 		
-		// Patch pour les chemins ded class.
+		// Patch url class.
 		self::$mailer->PluginDir = config::mail('pluginDir');
 	}
 	

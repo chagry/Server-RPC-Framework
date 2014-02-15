@@ -1,10 +1,10 @@
 <?php
 /*
- * @version		0.4
+ * @version		0.5
  * @date Crea	26/04/2013.
- * @date Modif	24/11/2013.
+ * @date Modif	12/02/2014.
  * @package		controleur_login.php
- * @contact		Chagry.fr - git@chagry.fr
+ * @contact		Chagry.com - git@chagry.com
  */
 
 defined('CHAG') or die('Acces interdit');
@@ -17,7 +17,7 @@ class login {
 	public static function identification($e='') {
 		
 		// Recup mail.
-		$eMail=filtre::base(base64_decode($e));
+		$eMail=util::filtre(base64_decode($e));
 		
 		// Var return. Array.
 		$tmp=Array();
@@ -71,7 +71,7 @@ class login {
 	public static function connexion($e='', $c='', $l='') {
 		
 		// Recup session.
-		$tmpIdSess=filtre::base($e);
+		$tmpIdSess=util::filtre($e);
 		
 		// Date Actuel.
 		$dateNew = new DateTime();
@@ -152,8 +152,8 @@ class login {
 				// Return le id session.
 				$tmp['session']=crp::crypte(session::id(),user::password());
 				
-				// Add 30mn new date.
-				$dateFuture = $dateNew->getTimestamp()+1800;
+				// Add time session.
+				$dateFuture = $dateNew->getTimestamp()+config::sys('tmpSession');
 				
 				// Prepart requet.
 				$req=array('date' => $dateFuture,
@@ -229,10 +229,10 @@ class login {
 		$dateNew = new DateTime();
 		
 		// Recup mail.
-		$eMail=filtre::base(base64_decode($m));
+		$eMail=util::filtre(base64_decode($m));
 		
 		// Recup langue.
-		$langue=filtre::base(base64_decode($l));
+		$langue=util::filtre(base64_decode($l));
 		
 		// Var return. Array.
 		$tmp=Array();
@@ -253,9 +253,9 @@ class login {
 				$tmpLang=(in_array($langue, $apiLangue))? $langue : $apiLangue[0];
 				
 				// Password
-				$pass=filtre::rands(6);
+				$pass=util::rands(6);
 				// Cles de cryptage.
-				$cles=md5(filtre::rands(8));
+				$cles=md5(util::rands(8));
 				// Password crypter.
 				$passCrypte=crp::crypte($pass, $cles);
 					
@@ -277,7 +277,7 @@ class login {
 				if(!empty($tmpUser)) {
 					 
 					// Numero camande.
-					$num=$dateNew->getTimestamp().'-'.filtre::rands(8).'-'.filtre::rands(3);
+					$num=$dateNew->getTimestamp().'-'.util::rands(8).'-'.util::rands(3);
 					
 					/*
 					 * Prepa donnes mail 1.
@@ -361,7 +361,7 @@ class login {
 	public static function forgotCodePin($e='') {
 		
 		// Recup mail.
-		$eMail=filtre::base(base64_decode($e));
+		$eMail=util::filtre(base64_decode($e));
 		
 		// Date Actuel.
 		$dateNew = new DateTime();
@@ -379,9 +379,9 @@ class login {
 			if(!empty($tmpUser)) {
 				
 				// Password
-				$pass=filtre::rands(6);
+				$pass=util::rands(6);
 				// Cles cryptage.
-				$cles=md5(filtre::rands(8));
+				$cles=md5(util::rands(8));
 				// Password crypter.
 				$passCrypte=crp::crypte($pass, $cles);
 				
@@ -395,7 +395,7 @@ class login {
 				dbSys::setNewCodePin($req);
 				
 				// Numero camande.
-				$num=$dateNew->getTimestamp().'-'.filtre::rands(8).'-'.filtre::rands(3);
+				$num=$dateNew->getTimestamp().'-'.util::rands(8).'-'.util::rands(3);
 					
 				/*
 				 * Preparation donnes mail 1.

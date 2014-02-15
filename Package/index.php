@@ -1,10 +1,10 @@
 <?php
 /*
- * @version		0.4
+ * @version		0.5
  * @date Crea	26/04/2013.
- * @date Modif	10/12/2013.
+ * @date Modif	12/02/2014.
  * @package		index.php
- * @contact		Chagry.fr - git@chagry.fr
+ * @contact		Chagry.com - git@chagry.com
  */
 
 define('CHAG', 1);
@@ -21,8 +21,10 @@ define('SL', DIRECTORY_SEPARATOR);
  */
 require_once PATH.SL.'lib'.SL.'crp.php';
 require_once PATH.SL.'lib'.SL.'load.php';
-require_once PATH.SL.'lib'.SL.'filtre.php';
+require_once PATH.SL.'lib'.SL.'util.php';
 require_once PATH.SL.'lib'.SL.'valide.php';
+require_once PATH.SL.'lib'.SL.'jsonRPC2Client.php';
+require_once PATH.SL.'lib'.SL.'jsonRPC1Client.php';
 require_once PATH.SL.'sys'.SL.'app.php';
 require_once PATH.SL.'sys'.SL.'db.php';
 require_once PATH.SL.'sys'.SL.'session.php';

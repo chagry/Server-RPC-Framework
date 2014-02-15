@@ -1,10 +1,10 @@
 <?php
 /*
- * @version		0.4
+ * @version		0.5
  * @date Crea	26/04/2013.
- * @date Modif	04/10/2013.
+ * @date Modif	12/02/2014.
  * @package		sys_config.php
- * @contact		Chagry.fr - git@chagry.fr
+ * @contact		Chagry.com - git@chagry.com
  */
 
 defined('CHAG') or die('Acces interdit');
@@ -42,6 +42,6 @@ class config {
 	 */ 
 	public static function addParams($c, $p, $v) {
 	
-		self::$params[filtre::base($c)][filtre::base($p)]=filtre::base($v);
+		self::$params[util::filtre($c)][util::filtre($p)]=util::filtre($v);
 	}
 }

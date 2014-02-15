@@ -1,10 +1,10 @@
 <?php
 /*
- * @version		0.4
+ * @version		0.5
  * @date Crea	06/05/2013.
- * @date Modif	04/12/2013.
+ * @date Modif	12/02/2014.
  * @package		configuration_access.php
- * @contact		Chagry.fr - git@chagry.fr
+ * @contact		Chagry.com - git@chagry.com
  */
 
 defined('CHAG') or die('Acces interdit');
@@ -19,7 +19,7 @@ class access {
 		 */
 		acl::addRole('guest');
 		acl::addRole('membre');
-		//--> Enter your role.
+		//--> Enter your role. acl::addRole('admin');
 		
 		/*
 		 * acl  -> addRegle fot controleur.
@@ -35,3 +35,4 @@ class access {
 		acl::addRegle('login', 'historique', 'membre');
 	}
 }
+?>

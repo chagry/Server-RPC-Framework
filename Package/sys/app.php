@@ -1,10 +1,10 @@
 <?php
 /*
- * @version		0.4
+ * @version		0.5
  * @date Crea	26/04/2013.
- * @date Modif	04/10/2013.
+ * @date Modif	12/02/2014.
  * @package		sys_app.php
- * @contact		Chagry.fr - git@chagry.fr
+ * @contact		Chagry.com - git@chagry.com
  */
 
 defined('CHAG') or die('Acces interdit');
@@ -48,13 +48,13 @@ class app
 				$reqConMethod = explode('_', $request['method']);
 					
 				// Controleur.
-				$control=filtre::base($reqConMethod[0]);
+				$control=util::filtre($reqConMethod[0]);
 					
 				// Action.
-				$action=filtre::base($reqConMethod[1]);
+				$action=util::filtre($reqConMethod[1]);
 				
 				// Session.
-				$tmpSess=(!valide::strMd5($reqConMethod[2]))? '' : filtre::base($reqConMethod[2]);
+				$tmpSess=(!valide::strMd5($reqConMethod[2]))? '' : util::filtre($reqConMethod[2]);
 				
 				// Start session.
 				session::start($tmpSess);
