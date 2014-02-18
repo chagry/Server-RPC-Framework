@@ -2,7 +2,7 @@
 /*
  * @version		0.5
  * @date Crea	26/04/2013.
- * @date Modif	12/02/2014.
+ * @date Modif	17/02/2014.
  * @package		controleur_login.php
  * @contact		Chagry.com - git@chagry.com
  */
@@ -533,7 +533,7 @@ class login {
 		
 		// add info for archive
 		$req['date']=date("U");
-		$req['action']='modif-mail-'.$eConf;
+		$req['action']='DEF-EDITE-MAIL-'.$eConf;
 		$req['usip']=config::server('usip');
 		$req['config']=$eConf;
 		
