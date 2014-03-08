@@ -2,7 +2,7 @@
 /*
  * @version		0.5
  * @date Crea	29/04/2013.
- * @date Modif	12/02/2014.
+ * @date Modif	28/02/2014.
  * @package		lib_valide.php
  * @contact		Chagry.com - git@chagry.com
  */
@@ -77,6 +77,30 @@ class valide
 		
 		// Control.
 		if(filter_var($str, FILTER_VALIDATE_URL)) $tmp = true;
+		else $tmp = false;
+		
+		// Return.
+		return $tmp;
+	}
+	
+	/*
+	 * Function domain(). 0.5
+	 * @param. String url.
+	 * @return boolean TRUE or FALSE. 
+	 */
+	public static function domain($str='')
+	{
+		//valid chars check
+		$Syntaxe = '#^([a-z\d](-*[a-z\d])*)(\.([a-z\d](-*[a-z\d])*))*$/i';
+		//overall length check
+		$Syntaxe1 = '#^.{1,253}$';
+		//length of each label
+		$Syntaxe2 = '#^[^\.]{1,63}(\.[^\.]{1,63})*$';
+		
+		$tmp = false;
+		
+		// Control.
+		if(preg_match($Syntaxe,$str) && preg_match($Syntaxe1,$str) && preg_match($Syntaxe2,$str)) $tmp = true;
 		else $tmp = false;
 		
 		// Return.
