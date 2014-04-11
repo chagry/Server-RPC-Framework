@@ -2,7 +2,7 @@
 /*
  * @version		0.5
  * @date Crea	26/04/2013.
- * @date Modif	12/02/2014.
+ * @date Modif	10/04/2014.
  * @package		model_dbSys.php
  * @contact		Chagry.com - git@chagry.com
  */
@@ -61,7 +61,7 @@ class dbSys {
 	}
 	
 	/*
-	 * Function getHistorique. 0.4
+	 * Function getHistorique. 0.5
 	 * @Param $e id user.
 	 */ 
 	public static function getHistorique($e=array()) {
@@ -69,7 +69,7 @@ class dbSys {
 		try {
 		
 			// requête SQL.
-			$req = db::go('SELECT * FROM sys_log WHERE userid=:id LIMIT 100');
+			$req = db::go('SELECT * FROM sys_log WHERE userid=:id ORDER BY date DESC LIMIT 100');
 			
 			// Exécut requête.
 			$req->execute($e);

@@ -1,7 +1,7 @@
 /*
  * @version		0.5
  * @date Crea	26/04/2013.
- * @date Modif	12/02/2014.
+ * @date Modif	11/04/2014.
  * @package		css_defaut.css
  * @contact		Chagry.com - git@chagry.com
  */
@@ -19,7 +19,7 @@ body
 	height: 100%;
 	width: 100%;
 	margin: 0px;
-	padding: 30px 0px 0px 0px;
+	padding: 0px;
 	background-image: url("../img/grey.png");
 	background-attachment: fixed;
 	background-color: #333;

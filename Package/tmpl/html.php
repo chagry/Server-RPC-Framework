@@ -2,7 +2,7 @@
 /*
  * @version		0.5
  * @date Crea	26/04/2013.
- * @date Modif	12/02/2014.
+ * @date Modif	11/04/2014.
  * @package		tmpl_html.php
  * @contact		Chagry.com - git@chagry.com
  */
@@ -17,7 +17,7 @@ class html {
 		$tmp='<!DOCTYPE html>';
 		$tmp.='<html>';
 		$tmp.='<head>';
-			$tmp.='<link rel="icon" href="public/img/favicon.ico" />';
+			$tmp.='<link rel="shortcut icon" href="public/img/favicon.png" />';
 			$tmp.='<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />';
 			$tmp.='<meta http-equiv="Pragma" content="no-cache">';
 			$tmp.='<link rel="stylesheet" href="public/css/defaut.css" type="text/css" />';
@@ -25,7 +25,7 @@ class html {
 		$tmp.='</head>';
 		$tmp.='<body>';
 		
-			$tmp.='<img src="public/img/logo.png" width="70%">';
+			$tmp.='<img src="public/img/logo.png">';
 			
 		$tmp.='</body>';
 		$tmp.='</html>';
