@@ -1,20 +1,22 @@
 <?php
-/*
- * @version		0.5
- * @date Crea	26/04/2013.
- * @date Modif	10/04/2014.
- * @package		model_dbSys.php
- * @contact		Chagry.com - git@chagry.com
+/**
+ * @version 0.5.0
+ * @license MIT license
+ * @link    https://chagry.com
+ * @author  Grigori <git@chagry.com>
+ * @package model_dbSys.php
  */
 
 defined('CHAG') or die('Acces interdit');
 
 class dbSys {
 	
-	/*
-	 * Function getUser. 0.4
-	 * @Param $e mail user.
-	 * return Array() -> champs user.
+	/**
+	 * Function getUser.
+	 * @param   array $e mail user.
+	 * @return  array user db
+	 * @access  public
+	 * @static
 	 */
 	public static function getUser($e=array()) {
 	
@@ -38,11 +40,13 @@ class dbSys {
 	
 		catch(Exception $e) { throw new Exception('SERV-ERROR-DATABASE'); }
 	}
-	
-	/*
-	 * Function setLastVisitDateUser. 0.4
-	 * @Param $e date & id user.
-	 */ 
+	 
+	/**
+	 * Function setLastVisitDateUser.
+	 * @param   array $e date & id user.
+	 * @access  public
+	 * @static
+	 */
 	public static function setLastVisitDateUser($e=array()) {
 	
 		try {
@@ -59,11 +63,14 @@ class dbSys {
 	
 		catch(Exception $e) { throw new Exception('SERV-ERROR-DATABASE'); }
 	}
-	
-	/*
-	 * Function getHistorique. 0.5
-	 * @Param $e id user.
-	 */ 
+	 
+	/**
+	 * Function getHistorique.
+	 * @param   array $e id user.
+	 * @return  array log db
+	 * @access  public
+	 * @static
+	 */
 	public static function getHistorique($e=array()) {
 	
 		try {
@@ -87,10 +94,12 @@ class dbSys {
 		catch(Exception $e) { throw new Exception('SERV-ERROR-DATABASE'); }
 	}
 	
-	/*
-	 * Function setNewCodePin. Modif user. 0.4
-	 * @Param $e code pin & id user.
-	 */ 
+	/**
+	 * Function setNewCodePin.
+	 * @param   array $e code pin & id user.
+	 * @access  public
+	 * @static
+	 */
 	public static function setNewCodePin($e=array()) {
 	
 		try {
@@ -107,11 +116,13 @@ class dbSys {
 	
 		catch(Exception $e) { throw new Exception('SERV-ERROR-DATABASE'); }
 	}
-	
-	/*
-	 * Function setNewLangue. 0.4
-	 * @Param $e langue & id user.
-	 */ 
+	 
+	/**
+	 * Function setNewLangue.
+	 * @param   array $e langue & id user.
+	 * @access  public
+	 * @static
+	 */
 	public static function setNewLangue($e=array()) {
 	
 		try {

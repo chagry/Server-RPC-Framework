@@ -1,10 +1,10 @@
 <?php
-/*
- * @version		0.5
- * @date Crea	26/04/2013.
- * @date Modif	12/02/2014.
- * @package		sys_config.php
- * @contact		Chagry.com - git@chagry.com
+/**
+ * @version 0.5.0
+ * @license MIT license
+ * @link    https://chagry.com
+ * @author  Grigori <git@chagry.com>
+ * @package sys_config.php
  */
 
 defined('CHAG') or die('Acces interdit');

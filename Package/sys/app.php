@@ -1,18 +1,20 @@
 <?php
-/*
- * @version		0.5
- * @date Crea	26/04/2013.
- * @date Modif	12/02/2014.
- * @package		sys_app.php
- * @contact		Chagry.com - git@chagry.com
+/**
+ * @version 0.5.0
+ * @license MIT license
+ * @link    https://chagry.com
+ * @author  Grigori <git@chagry.com>
+ * @package sys_app.php
  */
 
 defined('CHAG') or die('Acces interdit');
 
 class app
 {
-	/*
-	 * Function start(). 0.4
+	/**
+	 * Function start function server JSON RPC.
+	 * @access  public
+	 * @static
 	 */ 
 	public static function start() {
 		
@@ -93,6 +95,11 @@ class app
 			
 			// output the response.
 			header('content-type: text/javascript');
+			
+			// If cross Domain true.
+			if(config::sys('crossDomain')==1) header('Access-Control-Allow-Origin: *');
+			
+			// Print request.
 			print json_encode($response);
 		}
 	}

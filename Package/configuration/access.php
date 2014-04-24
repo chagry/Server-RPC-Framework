@@ -1,10 +1,10 @@
 <?php
-/*
- * @version		0.5
- * @date Crea	06/05/2013.
- * @date Modif	12/02/2014.
- * @package		configuration_access.php
- * @contact		Chagry.com - git@chagry.com
+/**
+ * @version 0.5.0
+ * @license MIT license
+ * @link    https://chagry.com
+ * @author  Grigori <git@chagry.com>
+ * @package configuration_access.php
  */
 
 defined('CHAG') or die('Acces interdit');
@@ -15,7 +15,7 @@ class access {
 	
 		/*
 		 * acl -> addRole.
-		 * @var $Role.  
+		 * @param $Role.  
 		 */
 		acl::addRole('guest');
 		acl::addRole('membre');
@@ -23,9 +23,9 @@ class access {
 		
 		/*
 		 * acl  -> addRegle fot controleur.
-		 * @var $controleur.
-		 * @var $action.
-		 * @var $Role.
+		 * @param $controleur.
+		 * @param $action.
+		 * @param $Role.
 		 */
 		acl::addRegle('login', 'identification', 'guest');
 		acl::addRegle('login', 'forgotCodePin', 'guest');
@@ -33,6 +33,9 @@ class access {
 		acl::addRegle('login', 'connexion', 'guest');
 		acl::addRegle('login', 'editMail', 'membre');
 		acl::addRegle('login', 'historique', 'membre');
+		
+		// Delete prod.
+		acl::addRegle('demo', 'greetings', 'guest');
 	}
 }
 ?>

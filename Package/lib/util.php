@@ -1,18 +1,20 @@
 <?php
-/*
- * @version		0.5
- * @date Crea	29/04/2013.
- * @date Modif	12/02/2014.
- * @package		lib_util.php
- * @contact		Chagry.com - git@chagry.com
+/**
+ * @version 0.5.0
+ * @license MIT license
+ * @link    https://chagry.com
+ * @author  Grigori <git@chagry.com>
+ * @package lib_util.php
  */
 
 class util {
 
-	/*
-	 * Function filtre(). 0.5
-	 * @param. String.
-	 * @return $str.
+	/**
+	 * Function filtre.
+	 * @param   string $str.
+	 * @return  string filtered
+	 * @access  public
+	 * @static
 	 */
 	public static function filtre($str='') {
 	
@@ -27,10 +29,12 @@ class util {
 		return $str;
 	}
 	
-	/*
-	 * Function rands(). 0.5
-	 * @param. nuber.
-	 * @return $number aleo. 
+	/**
+	 * Function rands.
+	 * @param   int $e.
+	 * @return  int rands
+	 * @access  public
+	 * @static
 	 */
 	public static function rands($e=6) {
 		
@@ -64,10 +68,12 @@ class util {
 		return $hexEncodedAddress;
 	}
 	
-	/*
-	 * Function encodeHex(). 0.5
-	 * @param. add.
-	 * @return encodeHex. 
+	/**
+	 * Function encodeHex.
+	 * @param   string $dec
+	 * @return  string encodeHex
+	 * @access  public
+	 * @static
 	 */
 	public static function encodeHex($dec) {
 		
@@ -84,10 +90,12 @@ class util {
 		return strrev($return);
 	}
 	
-	/*
-	 * Function base58_decode(). 0.5
-	 * @param. add.
-	 * @return base58_decode. 
+	/**
+	 * Function base58_decode.
+	 * @param   string $base58.
+	 * @return  string base58_decode
+	 * @access  public
+	 * @static
 	 */
 	public static function base58_decode($base58) {
 		
@@ -104,6 +112,32 @@ class util {
 		
 		// Return result.
 		return $return;
+	}
+	
+	/**
+	 * Function base58_encode.
+	 * @param   string $string
+	 * @return  string $base58
+	 * @access  public
+	 * @static
+	 */
+	public static function base58_encode($string) {
+		
+		//Define vairables
+		$table = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
+		$long_value = gmp_init(bin2hex($string), 16);
+		$result = '';
+		
+		while(gmp_cmp($long_value, 58) > 0) {
+			list($long_value, $mod) = gmp_div_qr($long_value, 58);
+			$result .= $table[gmp_intval($mod)];
+		}
+		$result .= $table[gmp_intval($long_value)];
+		
+		for($nPad = 0; $string[$nPad] == "\0"; ++$nPad);
+		
+		// Return result.
+		return str_repeat($table[0], $nPad).strrev($result);
 	}
 }
 ?>

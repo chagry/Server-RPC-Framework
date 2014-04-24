@@ -1,19 +1,23 @@
 <?php
-/*
- * @version		0.5
- * @date Crea	26/04/2013.
- * @date Modif	17/02/2014.
- * @package		controleur_login.php
- * @contact		Chagry.com - git@chagry.com
+/**
+ * @version 0.5.0
+ * @license MIT license
+ * @link    https://chagry.com
+ * @author  Grigori <git@chagry.com>
+ * @package controleur_login.php
  */
 
 defined('CHAG') or die('Acces interdit');
 
 class login {
 	
-	/*
-	 * Function identification. 0.4
-	 */ 
+	/**
+	 * Function identification.
+	 * @param   string $e mail encode base 64.
+	 * @return  array session crypte
+	 * @access  public
+	 * @static
+	 */
 	public static function identification($e='') {
 		
 		// Recup mail.
@@ -65,8 +69,14 @@ class login {
 		return $tmp;
 	}
 	
-	/*
-	 * Function connexion. 0.4
+	/**
+	 * Function connexion.
+	 * @param   string $e session id.
+	 * @param   string $c mail crypte.
+	 * @param   string $l code lang crypte.
+	 * @return  array session, info user crypte
+	 * @access  public
+	 * @static
 	 */ 
 	public static function connexion($e='', $c='', $l='') {
 		
@@ -183,9 +193,13 @@ class login {
 		return $tmp;
 	}
 	
-	/*
-	 * Function historique. 0.4
-	 */ 
+	/**
+	 * Function historique.
+	 * @param   string $e control crypte.
+	 * @return  array historique Array, chart array.
+	 * @access  public
+	 * @static
+	 */
 	public static function historique($c='') {
 		
 		// Var de retour. Array.
@@ -220,8 +234,13 @@ class login {
 		return $tmp;
 	}
 	
-	/*
-	 * Function inscription. 0.4
+	/**
+	 * Function inscription.
+	 * @param   string $m mail encode base 64.
+	 * @param   string $l code lang encode base 64.
+	 * @return  string ok
+	 * @access  public
+	 * @static
 	 */ 
 	public static function inscription($m='', $l='') {
 		
@@ -355,8 +374,12 @@ class login {
 		return $tmp;
 	}
 	
-	/*
-	 * Function forgotCodePin. 0.4
+	/**
+	 * Function forgotCodePin.
+	 * @param   string $e mail encode base 64.
+	 * @return  string ok
+	 * @access  public
+	 * @static
 	 */ 
 	public static function forgotCodePin($e='') {
 		
@@ -469,8 +492,13 @@ class login {
 		return $tmp;
 	}
 	
-	/*
-	 * Function editMail. 0.4
+	/**
+	 * Function editMail.
+	 * @param   string $e mail crypte.
+	 * @param   string $c code crypte principal/security.
+	 * @return  array historique Array
+	 * @access  public
+	 * @static
 	 */ 
 	public static function editMail($e='', $c='') {
 		

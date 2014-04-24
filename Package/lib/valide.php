@@ -1,10 +1,10 @@
 <?php
-/*
- * @version		0.5
- * @date Crea	29/04/2013.
- * @date Modif	28/02/2014.
- * @package		lib_valide.php
- * @contact		Chagry.com - git@chagry.com
+/**
+ * @version 0.5.0
+ * @license MIT license
+ * @link    https://chagry.com
+ * @author  Grigori <git@chagry.com>
+ * @package lib_valide.php
  */
 
 class valide

@@ -1,25 +1,29 @@
 <?php
-/*
- * @version		0.5
- * @date Crea	26/04/2013.
- * @date Modif	12/02/2014.
- * @package		sys_user.php
- * @contact		Chagry.com - git@chagry.com
+/**
+ * @version 0.5.0
+ * @license MIT license
+ * @link    https://chagry.com
+ * @author  Grigori <git@chagry.com>
+ * @package sys_user.php
  */
 
 defined('CHAG') or die('Acces interdit');
 
 class user {
 	
-	/*
-	 * @var private $Info  -> array user info. 0.4
+	/**
+	 * @var $Info  -> array user info.
+	 * @access  private
 	 */
 	private static $info = array();
 	
-	/*
-	 * Function __callStatic. Retourn info user. 0.4
-	 * @var $e	 -> info.
-	 */ 
+	/**
+	 * Function __callStatic.
+	 * @param   string $name key of array info user.
+	 * @return  string value of user.
+	 * @access  public
+	 * @static
+	 */
 	public static function __callStatic($name, $e) {
 		
 		// if info in array.
@@ -29,8 +33,11 @@ class user {
 		else return '';
 	}
 	
-	/*
-	 * Function noGuest(). Return true or false. 0.4
+	/**
+	 * Function noGuest.
+	 * @return  boolean
+	 * @access  public
+	 * @static
 	 */ 
 	public static function noGuest() {
 	
@@ -40,11 +47,13 @@ class user {
 		// else not user.
 		else return false;
 	}
-	
-	/*
-	 * Function start(). 0.4
-	 * @var $e	-> array user info.
-	 */ 
+	 
+	/**
+	 * Function noGuest.
+	 * @param   array $e user info.
+	 * @access  public
+	 * @static
+	 */
 	public static function start($e='') {
 		
 		// if user connect.

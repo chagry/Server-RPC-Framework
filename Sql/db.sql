@@ -62,6 +62,26 @@ CREATE TABLE IF NOT EXISTS `sys_user` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `dem_greet`
+--
+CREATE TABLE IF NOT EXISTS `dem_greet` (
+  `lang` varchar(2) NOT NULL DEFAULT 'en',
+  `mess` varchar(155) NOT NULL,
+  KEY `lang` (`lang`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `dem_greet`
+--
+INSERT INTO `dem_greet` (`lang`, `mess`) VALUES
+('en', 'Hello'),
+('fr', 'Bonjour'),
+('de', 'Hallo'),
+('ru', 'Здравствуйте');
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,10 +1,10 @@
 <?php
-/*
- * @version		0.5
- * @date Crea	06/05/2013.
- * @date Modif	12/02/2014.
- * @package		configuration_params.php
- * @contact		Chagry.com - git@chagry.com
+/**
+ * @version 0.5.0
+ * @license MIT license
+ * @link    https://chagry.com
+ * @author  Grigori <git@chagry.com>
+ * @package configuration_params.php
  */
 
 defined('CHAG') or die('Acces interdit');
@@ -17,11 +17,12 @@ class params {
 		 * sys.
 		 */
 		config::addParams('sys', 'off', 1);
-		config::addParams('sys', 'lang', 'en,fr');
-		config::addParams('sys', 'path', 'http://domain.com/doc/');
-		config::addParams('sys', 'media', 'http://domaine.com/doc/public/');
+		config::addParams('sys', 'lang', 'en,fr,de,ru');
+		config::addParams('sys', 'path', 'http://domain.com/api/');
+		config::addParams('sys', 'media', 'http://domaine.com/api/public/');
 		config::addParams('sys', 'support', 'mail@domain.com');
 		config::addParams('sys', 'tmpSession', 1800);
+		config::addParams('sys', 'crossDomain', 0);
 		
 		/*
 		 * db.
@@ -37,11 +38,11 @@ class params {
 		config::addParams('mail', 'from', 'no-reply@domain.com');
 		config::addParams('mail', 'fromName', 'Name expidit');
 		config::addParams('mail', 'pluginDir', 'lib/');
-		config::addParams('mail', 'smtpAct', '');
-		config::addParams('mail', 'host', '');
-		config::addParams('mail', 'SmtpAuth', false);
-		config::addParams('mail', 'Username', '');
-		config::addParams('mail', 'Password', '');
+		//config::addParams('mail', 'smtpAct', '');
+		//config::addParams('mail', 'host', '');
+		//config::addParams('mail', 'SmtpAuth', false);
+		//config::addParams('mail', 'Username', '');
+		//config::addParams('mail', 'Password', '');
 		
 		/*
 		 * server.

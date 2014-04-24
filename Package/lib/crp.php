@@ -1,10 +1,10 @@
 <?php
 /*
  * @version     0.1
- * @date Crea   23/04/2013.
- * @date Modif  28/04/2013.
  * @package		crp.php
- * @contact		chagry.fr - git@chagry.fr
+ * @license MIT license
+ * @link    https://chagry.com
+ * @author  Grigori <git@chagry.com>
  * @Func Crypt  crp::crypte('Text', 'Key');
  * @Func Decry  crp::decrypte('Text', 'Key');
  */
