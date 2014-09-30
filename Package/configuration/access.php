@@ -34,6 +34,9 @@ class access {
 		acl::addRegle('login', 'editMail', 'membre');
 		acl::addRegle('login', 'historique', 'membre');
 		
+		acl::addRegle('btc', 'news', 'guest');
+		acl::addRegle('btc', 'infos', 'guest');
+		
 		// Delete prod.
 		acl::addRegle('demo', 'greetings', 'guest');
 	}
