@@ -152,7 +152,7 @@ class jsonRPC1Client {
 				throw new Exception('Incorrect response id (request id: '.$currentId.', response id: '.$response['id'].')');
 			}
 			if (!is_null($response['error'])) {
-				throw new Exception('Request error: '.$response['error']);
+				throw new Exception($response['error']);
 			}
 			
 			return $response['result'];
