@@ -36,6 +36,7 @@ class access {
 		
 		acl::addRegle('btc', 'news', 'guest');
 		acl::addRegle('btc', 'infos', 'guest');
+		acl::addRegle('btc', 'address', 'guest');
 		
 		// Delete prod.
 		acl::addRegle('demo', 'greetings', 'guest');

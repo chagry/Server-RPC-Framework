@@ -68,5 +68,41 @@ class btc {
 		// else not btc.
 		else throw new Exception('BTC-ERR-SERVER-UNAVAILABLE');
 	}
+	
+	/**
+	 * Function address blockChain info address.
+	 * @param	 string $e the address btc.
+	 * @return	 array btc + value.
+	 * @access	 public
+	 * @static
+	 */
+	public static function address($e='') {
+		
+		// If valide btc adresse.
+		if(valide::btc(util::filtre($e))) {
+			
+			// Upload btc price blockChain.
+			$pr = file_get_contents('https://blockchain.info/rawaddr/'.util::filtre($e));
+			
+			// If valide infos.
+			if($pr) {
+				
+				// @var array return.
+				$tmp=Array();
+				
+				// Add price for return.
+				$tmp=json_decode($pr,true);
+				
+				// Return array.
+				return $tmp;
+			}
+			
+			// else not btc.
+			else throw new Exception('BTC-ERR-SERVER-UNAVAILABLE');
+		}
+					
+		// else not btc.
+		else throw new Exception('BTC-ERR-SERVER-UNAVAILABLE');
+	}
 }
 ?>
