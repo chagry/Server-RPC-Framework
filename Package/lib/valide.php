@@ -223,33 +223,40 @@ class valide
 	 * @param. String btc.
 	 * @return boolean TRUE or FALSE. 
 	 */
-	public static function btc($str='')
-	{
-		$tmp = false;
-		// decodeToBase58 Input Address
-		$decodedAddress = util::base58_decode($str);
-		// encodeToHexFormat Decoded Address
-		$hexEncodedAddress = util::encodeHex($decodedAddress);
-		// appendHexZeros Hex Encoded Check
-		$hexEncodedAddress = util::appendHexZeros($str, $hexEncodedAddress);
+	public static function btc($address='') {
 		
-		//Remove last 8 characters from Hexencoded string
-		$encodedAddress = substr($hexEncodedAddress, 0, strlen($hexEncodedAddress) - 8);
-		//Convert to binary
-		$binaryAddress = pack("H*" , $encodedAddress);
-		//Hash(Hash(Value))
-		$hashedAddress = strtoupper(hash("sha256", hash("sha256", $binaryAddress, true)));
+		$origbase58 = $address;
+		$dec = "0";
 		
-		//Return the beginning checksum of the address
-		$checkSumAddress = substr($hashedAddress, 0 ,8);
-		$ValidCheckSum = substr($hexEncodedAddress, -8);
+		for ($i = 0; $i < strlen($address); $i++)
+		{
+			$dec = bcadd(bcmul($dec,"58",0),strpos("123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz",substr($address,$i,1)),0);
+		}
 		
-		// Control.
-		if($checkSumAddress == $ValidCheckSum) $tmp = true;
-		else $tmp = false;
+		$address = "";
 		
-		// Return.
-		return $tmp;
+		while (bccomp($dec,0) == 1)
+		{
+			$dv = bcdiv($dec,"16",0);
+			$rem = (integer)bcmod($dec,"16");
+			$dec = $dv;
+			$address = $address.substr("0123456789ABCDEF",$rem,1);
+		}
+		
+		$address = strrev($address);
+		
+		for ($i = 0; $i < strlen($origbase58) && substr($origbase58,$i,1) == "1"; $i++)
+		{
+			$address = "00".$address;
+		}
+		
+		if (strlen($address)%2 != 0) $address = "0".$address;
+		
+		if (strlen($address) != 50) return false;
+		
+		if (hexdec(substr($address,0,2)) > 0) return false;
+		
+		return true;
 	}
 }
 ?>
