@@ -116,7 +116,7 @@ class btc {
 					foreach ($v['inputs'] as $k1 => $v1) {
 						
 						// If key existe. Increment le nombre.
-						if($v1['prev_out']['addr'] == $adr) $out = $v1['prev_out']['value'];
+						if($v1['prev_out']['addr'] == $adr) $out += $v1['prev_out']['value'];
 					}
 					
 					// Each out (in)
