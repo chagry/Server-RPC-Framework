@@ -18,13 +18,13 @@ RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
 # Block _REQUEST.
 RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
 # return index if error!
-RewriteRule ^(.*)$ index.html [F,L]
+RewriteRule ^(.*)$ index.php [F,L]
 
 # if doc or file, Not redirect.
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !^/index.html
-RewriteRule (.*) index.html
+RewriteCond %{REQUEST_URI} !^/index.php
+RewriteRule (.*) index.php
 
 # Delete www.
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
@@ -39,3 +39,7 @@ RewriteRule ^(.*)$ http://%1%{REQUEST_URI} [R=301,QSA,NC,L]
 # RewriteCond %{HTTPS} =on [OR]
 # RewriteCond %{SERVER_PORT} 443
 # RewriteRule ^/?(.*) http://domain.com/doc/$1 [R,L]
+
+# On Access Control Origin.
+# Header set Access-Control-Allow-Origin "*"
+# Header set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept"
