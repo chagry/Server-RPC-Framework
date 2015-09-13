@@ -1,6 +1,6 @@
 <?php
 /**
- * @version 0.5.0
+ * @version 0.6.0
  * @license MIT license
  * @link    https://chagry.com
  * @author  Grigori <git@chagry.com>
@@ -169,7 +169,7 @@ class valide
 	public static function alpha($str='')
 	{
 		// RegEx.
-		$Syntaxe = '#^[a-zA-Z]+$#' ;
+		$Syntaxe = '#^[a-zA-ZéÉèÈçÇàôÔùúûÛÚÙÝîÎêÊäëïöüÿÄËÏÖÜŸãñõÃÑÕœÆÀÁÂÃÒÓ]+$#';
 		$tmp = false;
 		
 		// Control.
@@ -189,6 +189,25 @@ class valide
 	{
 		// RegEx.
 		$Syntaxe = '#^[a-zA-Z0-9]+$#' ;
+		$tmp = false;
+		
+		// Control.
+		if(preg_match($Syntaxe,$str)) $tmp = true;
+		else $tmp = false;
+		
+		// Return.
+		return $tmp;
+	}
+	
+	/*
+	 * Function txt(). 0.6
+	 * @param. String alpha.
+	 * @return boolean TRUE or FALSE. 
+	 */
+	public static function txt($str='')
+	{
+		// RegEx.
+		$Syntaxe = '#^[ a-zA-Z0-9+\',.\-_?!()=*"/:&éÉèÈçÇàôÔùúûÛÚÙÝîÎêÊäëïöüÿÄËÏÖÜŸãñõÃÑÕœÆÀÁÂÃÒÓ]+$#';
 		$tmp = false;
 		
 		// Control.
@@ -251,12 +270,56 @@ class valide
 		}
 		
 		if (strlen($address)%2 != 0) $address = "0".$address;
-		
 		if (strlen($address) != 50) return false;
-		
 		if (hexdec(substr($address,0,2)) > 0) return false;
 		
 		return true;
+	}
+	
+	/*
+	 * Function btc_key(). 0.5
+	 * @param. String btc key.
+	 * @return boolean TRUE or FALSE. 
+	 */
+	public static function btc_key($str='')
+	{
+		// RegEx.
+		$Syntaxe = '#^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{50,54}$#' ;
+		$tmp = false;
+		
+		// Control.
+		if(preg_match($Syntaxe,$str)) $tmp = true;
+		else $tmp = false;
+		
+		// Return.
+		return $tmp;
+	}
+	
+	/*
+	 * Function btc_sign(). 0.6
+	 * @Param $a adr.
+	 * @Param $m mess.
+	 * @Param $s sign.
+	 * @return boolean TRUE or FALSE. 
+	 */
+	public static function btc_sign($a='', $m='', $s='')
+	{
+		// RegEx.
+		$tmp = false;
+		
+		try {
+			
+			// Class model dbClub.
+			load::auto('lib_verifymessage');
+			
+			// Control.
+			if(verifymessage($a, $s, $m)) $tmp = true;
+			
+			// Return.
+			return $tmp;
+		}
+		
+		catch(Exception $e) { return $tmp; }
 	}
 }
 ?>

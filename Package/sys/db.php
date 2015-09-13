@@ -17,11 +17,11 @@ class db {
 	private static $go ='';
 	
 	/*
-	 * Function connect(). 0.4
+	 * Function connect(). 0.6
 	 * @param $dbcon.
 	 * @return new PDO.
 	 */
-	public static function connect($dbcon) {
+	private static function connect($dbcon) {
 	
 		// if not PDO.
 		if(self::$go=='') {
@@ -30,6 +30,7 @@ class db {
 			
 				// Option error PDO.
 				$pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
+				$pdo_options[PDO::ATTR_DEFAULT_FETCH_MODE] = PDO::FETCH_ASSOC;
 				// Conexion.
 				self::$go = new PDO('mysql:host='.$dbcon['host'].';dbname='.$dbcon['db'],$dbcon['user'],$dbcon['pass'], $pdo_options);
 			}
@@ -50,6 +51,16 @@ class db {
 		if(self::$go=='') self::connect(config::db());
 		// Return
 		return self::$go->prepare($prepa);
+	}
+	
+	/*
+	 * Function go(). 0.6
+	 * @return last insert id in PDO.
+	 */
+	public static function lastId() {
+	
+		// Return
+		return self::$go->lastInsertId();
 	}
 }
 ?>
