@@ -1,14 +1,14 @@
 ![logo](http://chagry.com/img/css/logo-menu.png)
 
-***
-
 Consult the website [Chagry](http://chagry.com/)
 
-[![Chagry Framework](http://img.youtube.com/vi/FOWqazj5Bb0/0.jpg)](http://www.youtube.com/watch?v=FOWqazj5Bb0)
+***
 
 # Documentation
 
-* [**1/ - Introduction**](Doc/Server-PHP-Doc.md)
+**1/ - Introduction**
+
+[![Chagry Framework](http://img.youtube.com/vi/FOWqazj5Bb0/0.jpg)](http://www.youtube.com/watch?v=FOWqazj5Bb0)
 
 ***
 
