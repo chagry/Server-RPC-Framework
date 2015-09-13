@@ -1,8 +1,10 @@
-![logo](https://chagry.com/img/css/logo-menu.png)
+![logo](http://chagry.com/img/css/logo-menu.png)
 
 ***
 
-Consult the website [Chagry](https://chagry.com/)
+Consult the website [Chagry](http://chagry.com/)
+
+[![Chagry Framework](http://img.youtube.com/vi/FOWqazj5Bb0/0.jpg)](http://www.youtube.com/watch?v=FOWqazj5Bb0)
 
 # Documentation
 
