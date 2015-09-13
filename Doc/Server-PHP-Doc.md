@@ -1,4 +1,4 @@
-![logo](https://chagry.com/img/css/logo-menu.png)
+![logo](http://chagry.com/img/css/logo-menu.png)
 
 ***
 
@@ -11,18 +11,14 @@ Documentation for Server PHP framework.
 
 ***
 
-# Video Tutorial
-Click to flag to start youtube video.
+# Introduction
 
-| Work | EN | FR | DE | RU |
-|------|----|----|----|----|
-|**Introduction**|en|[![fr](https://chagry.com/img/flag/fr.gif)](https://www.youtube.com/watch?v=-fANBFZEHdk)|de|ru|
-|**Installation**|en|fr|de|ru|
-|**Use**|en|fr|de|ru|
+[![Chagry Framework](http://img.youtube.com/vi/4ZF-uqE7JCg/0.jpg)](http://www.youtube.com/watch?v=4ZF-uqE7JCg)
 
 ***
 
 # Installation
+
 Follow the steps for installing the API on the server
 
 **Required**

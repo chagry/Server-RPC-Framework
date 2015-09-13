@@ -16,7 +16,7 @@ Consult the website [Chagry](http://chagry.com/)
 
 * [PHPMailer](https://github.com/Synchro/PHPMailer) The classic email sending library for PHP.
 * [JSON-RPC PHP](http://jsonrpcphp.org/) is implementing functionalities of the JSON-RPC protocol.
-* [Bootstrap For Email](https://github.com/advancedrei/BootstrapForEmail) Bootstrap Template for HTML Email.
+* [phpecc](https://github.com/phpecc/phpecc) Elliptic Curve Cryptography.
 * [Bitcoin Pseudocode Client](https://github.com/Xenland/Bitcoin-Pseudocode-Client/blob/gh-pages/examples/php/verify_bitcoin_address.php) Verifying a Bitcoin address.
 
 ***
