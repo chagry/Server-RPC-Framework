@@ -19,7 +19,7 @@ Documentation for Server PHP framework.
 
 # Installation
 
-[![Chagry Framework](http://img.youtube.com/vi/4ZF-uqE7JCg/0.jpg)](http://www.youtube.com/watch?v=4ZF-uqE7JCg)
+[![Chagry Framework](http://img.youtube.com/vi/QuZG4Lp1Y5k/0.jpg)](http://www.youtube.com/watch?v=QuZG4Lp1Y5k)
 
 ***
 
