@@ -73,7 +73,7 @@ class demo {
 |**SERV-ERROR-CONNECT-MYSQL**|MySQL server connection impossible. Error in the access data.|Connexion au serveur MySQL impossible. Erreur dans les données d'accès.|
 |**SERV-ERROR-OFFLINE-MESSAGE**|The application is currently down for maintenance. Sorry for the inconvenience.|L'application est actuellement indisponible pour cause de maintenance. Désolé pour le désagrément.|
 
-*Example file* `Example/index.php` *(Line 20)*
+*Example file* `Example/index.php`
 
 ```php
 // Init call API.
@@ -90,6 +90,32 @@ $call->demo_greetings('Daenerys Targaryen');
     [greet] => Hello Daenerys Targaryen
 )
 ```
+
+***
+
+# Class Util
+
+[![Chagry Framework](http://img.youtube.com/vi/cesfI9G3XXk/0.jpg)](http://www.youtube.com/watch?v=cesfI9G3XXk)
+
+*Example use*
+
+```php
+$tmp = util::rands(6);
+
+// $tmp = 375397
+```
+
+**Function**
+
+| Function | Params | Return |
+|----------|--------|--------|
+|**filtre()**|string for filter|string filtered - strip_tags, rtrim, ltrim|
+|**rands()**|int length number you want|random number with length = param|
+|**base58_decode()**|string base 58|string decoded|
+|**base58_encode()**|string for encoding|string base 58|
+|**encodeHex()**|string for encoding|string encode Hex|
+|**toBTC()**|Satoshi value (int)|Return it as a string formatted with 8 decimals|
+|**toSatoshi()**|BTC value (float)|Return Satoshi value (int)|
 
 ***
 
