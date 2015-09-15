@@ -105,8 +105,6 @@ $tmp = util::rands(6);
 // $tmp = 375397
 ```
 
-**Function**
-
 | Function | Params | Return |
 |----------|--------|--------|
 |**filtre()**|string for filter|string filtered - strip_tags, rtrim, ltrim|
@@ -116,6 +114,78 @@ $tmp = util::rands(6);
 |**encodeHex()**|string for encoding|string encode Hex|
 |**toBTC()**|Satoshi value (int)|Return it as a string formatted with 8 decimals|
 |**toSatoshi()**|BTC value (float)|Return Satoshi value (int)|
+
+***
+
+# Class Valide
+
+[![Chagry Framework](http://img.youtube.com/vi/7HFhwi7ZO1s/0.jpg)](http://www.youtube.com/watch?v=7HFhwi7ZO1s)
+
+*Example use*
+
+```php
+$tmp = valide::email('dde@sfrti');
+// $tmp = false
+
+if(!valide::alpha('sdfjh23423zefze')) throw new Exception('VAR-MESSAGE-ERROR');
+// Send error.
+```
+| Function | Params |
+|----------|--------|
+|**email($e)**|$e = mail|
+|**strMd5($e)**|$e = string md5|
+|**strSha1($e)**|$e = string sha1|
+|**url($e)**|$e = string url|
+|**domain($e)**|$e = string domain|
+|**ip($e)**|$e = string ip|
+|**floats($e)**|$e = float|
+|**ints($e)**|$e = int|
+|**alpha($e)**|$e = string|
+|**alpha_numeric($e)**|$e = string|
+|**txt($e)**|$e = string|
+|**numeric($e)**|$e = int|
+|**btc($e)**|$e = string address bitcoin|
+|**btc_key($e)**|$e = string key bitcoin|
+|**btc_sign($e, $m, $s)**|$e = address bitcoin, $m = message, $s = sign|
+
+*Example file* `controleur/demo.php`
+
+```php
+/**
+ * @version 0.6.0
+ * @license MIT license
+ * @link    http://chagry.com
+ * @author  Grigori <git@chagry.com>
+ * @package controleur_demo.php
+ */
+
+defined('CHAG') or die('Acces interdit');
+
+class demo {
+	
+	/**
+	 * Function greetings first function for demo class.
+	 * @param   string $e the name of client.
+	 * @return  string Message "hello $e"
+	 * @access  public
+	 * @static
+	 */
+	public static function greetings($e='') {
+		
+		// Valide var or send error.
+		if(!valide::alpha($e)) throw new Exception('GREET-VAR-NOT-VALIDE');
+		
+		// @var array return.
+		$tmp=Array();
+		
+		// Add var greet in array.
+		$tmp['greet']='Hello '.$e;
+		
+		// Return array.
+		return $tmp;
+	}
+}
+```
 
 ***
 
