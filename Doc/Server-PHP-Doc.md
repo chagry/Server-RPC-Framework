@@ -186,6 +186,11 @@ class demo {
 	}
 }
 ```
+***
+
+# Configuration
+
+[![Chagry Framework](http://img.youtube.com/vi/SJ4HTEo7uL4/0.jpg)](http://www.youtube.com/watch?v=SJ4HTEo7uL4)
 
 ***
 
