@@ -107,13 +107,13 @@ $tmp = util::rands(6);
 
 | Function | Params | Return |
 |----------|--------|--------|
-|**filtre()**|string for filter|string filtered - strip_tags, rtrim, ltrim|
-|**rands()**|int length number you want|random number with length = param|
-|**base58_decode()**|string base 58|string decoded|
-|**base58_encode()**|string for encoding|string base 58|
-|**encodeHex()**|string for encoding|string encode Hex|
-|**toBTC()**|Satoshi value (int)|Return it as a string formatted with 8 decimals|
-|**toSatoshi()**|BTC value (float)|Return Satoshi value (int)|
+|**filtre($e)**|$e = string for filter|string filtered - strip_tags, rtrim, ltrim|
+|**rands($e)**|$e = int length number you want|random number with length = param|
+|**base58_decode($e)**|$e = string base 58|string decoded|
+|**base58_encode($e)**|$e = string for encoding|string base 58|
+|**encodeHex($e)**|$e = string for encoding|string encode Hex|
+|**toBTC($e)**|$e = Satoshi value (int)|Return it as a string formatted with 8 decimals|
+|**toSatoshi($e)**|$e = BTC value (float)|Return Satoshi value (int)|
 
 ***
 
@@ -186,11 +186,151 @@ class demo {
 	}
 }
 ```
+
 ***
 
 # Configuration
 
 [![Chagry Framework](http://img.youtube.com/vi/SJ4HTEo7uL4/0.jpg)](http://www.youtube.com/watch?v=SJ4HTEo7uL4)
+
+***
+
+# Base de données
+
+[![Chagry Framework](http://img.youtube.com/vi/q6LKKZLx45c/0.jpg)](http://www.youtube.com/watch?v=q6LKKZLx45c)
+
+*sql file*
+
+```sql
+--
+-- Structure de la table `dem_greet`
+--
+CREATE TABLE IF NOT EXISTS `dem_greet` (
+  `lang` varchar(2) NOT NULL DEFAULT 'en',
+  `mess` varchar(155) NOT NULL,
+  KEY `lang` (`lang`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `dem_greet`
+--
+INSERT INTO `dem_greet` (`lang`, `mess`) VALUES
+('en', 'Hello'),
+('fr', 'Bonjour'),
+('de', 'Hallo'),
+('ru', 'Здравствуйте');
+```
+
+*Example file* `model/dbs.php`
+
+```php
+/**
+ * @version 0.6.0
+ * @license MIT license
+ * @link    https://chagry.com
+ * @author  Grigori <git@chagry.com>
+ * @package model_dbs.php
+ */
+
+defined('CHAG') or die('Acces interdit');
+
+class dbs {
+	
+	/**
+	 * Function getGreet.
+	 * @param   array $e code langue "en".
+	 * @return  array greet db
+	 * @access  public
+	 * @static
+	 */
+	public static function getGreet($e) {
+	
+		try {
+		
+			// query SQL.
+			$req = db::go('SELECT * FROM dem_greet WHERE lang=:lang');
+			
+			// Execute query.
+			$req->execute($e);
+			
+			// data db.
+			$dataTmp = $req->fetch();
+    	
+    		// close query SQL.
+			$req->closeCursor();
+			
+			// return result.
+			return $dataTmp;
+		}
+	
+		catch(Exception $e) { throw new Exception('SERV-ERROR-DATABASE'); }
+	}
+}
+```
+
+*Example file* `controleur/demo.php`
+
+```php
+/**
+ * @version 0.6.0
+ * @license MIT license
+ * @link    http://chagry.com
+ * @author  Grigori <git@chagry.com>
+ * @package controleur_demo.php
+ */
+
+defined('CHAG') or die('Acces interdit');
+
+class demo {
+	
+	/**
+	 * Function greetings first function for demo class.
+	 * @param   string $e the name of client.
+	 * @param   string $l the code langue.
+	 * @return  string Message "hello $e"
+	 * @access  public
+	 * @static
+	 */
+	public static function greetings($e='', $l='') {
+		
+		// Valide var or send error.
+		if(!valide::alpha($e)) throw new Exception('GREET-VAR-NOT-VALIDE');
+		if(!valide::alpha($l)) throw new Exception('LANG-VAR-NOT-VALIDE');
+		
+		// query.
+		$tmpGreet = dbs::getGreet(array('lang' => $l));
+		
+		// Valide return db rep.
+		if(empty($tmpGreet)) throw new Exception('NOT-LANG-IN-DB');
+		
+		// @var array return.
+		$tmp=Array();
+		
+		// Add var greet in array.
+		$tmp['greet'] = $tmpGreet['mess'].' '.util::filtre($e);
+		$tmp['lang'] = $tmpGreet['lang'];
+		
+		// Return array.
+		return $tmp;
+	}
+}
+```
+
+**call**
+
+```php
+// call.
+$call->demo_greetings('Daenerys Targaryen', 'ru');
+```
+
+**Server Return**
+
+```json
+(
+    [greet] => Здравствуйте Daenerys Targaryen
+    [lang] => ru
+)
+```
 
 ***
 
