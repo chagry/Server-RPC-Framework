@@ -36,7 +36,7 @@ class db {
 			}
 			
 			// Exception.
-			catch(Exception $e) { throw new Exception('SERV-ERROR-CONNECT-MYSQL'); }
+			catch(Exception $e) { throw new Exception('SERV_ERROR_CONNECT_MYSQL'); }
 		}
 	}
 	
