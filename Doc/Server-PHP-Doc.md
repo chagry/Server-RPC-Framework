@@ -67,11 +67,11 @@ class demo {
 
 | Code Error | EN | FR |
 |----------|--------|--------|
-|**SERV-ERROR-NOT-FIND-FILE**|Error loading the execution file.|Erreur lors du chargement du fichier d'exécution.|
-|**SERV-ERROR-DATABASE**|Cannot connect to the SQL database. Error in the data.|Impossible de se connecter à la base SQL. Erreur dans les données.|
-|**SERV-ERROR-INVALID-PARAM-OR-METHODE**|Incorrect methods or settings. Error in the access data.|Méthodes ou Paramètres incorrects. Erreur dans les données d'accès.|
-|**SERV-ERROR-CONNECT-MYSQL**|MySQL server connection impossible. Error in the access data.|Connexion au serveur MySQL impossible. Erreur dans les données d'accès.|
-|**SERV-ERROR-OFFLINE-MESSAGE**|The application is currently down for maintenance. Sorry for the inconvenience.|L'application est actuellement indisponible pour cause de maintenance. Désolé pour le désagrément.|
+|**SERV_ERROR_NOT_FIND_FILE**|Error loading the execution file.|Erreur lors du chargement du fichier d'exécution.|
+|**SERV_ERROR_DATABASE**|Cannot connect to the SQL database. Error in the data.|Impossible de se connecter à la base SQL. Erreur dans les données.|
+|**SERV_ERROR_INVALID_PARAM_OR_METHODE**|Incorrect methods or settings. Error in the access data.|Méthodes ou Paramètres incorrects. Erreur dans les données d'accès.|
+|**SERV_ERROR_CONNECT_MYSQL**|MySQL server connection impossible. Error in the access data.|Connexion au serveur MySQL impossible. Erreur dans les données d'accès.|
+|**SERV_ERROR_OFFLINE_MESSAGE**|The application is currently down for maintenance. Sorry for the inconvenience.|L'application est actuellement indisponible pour cause de maintenance. Désolé pour le désagrément.|
 
 *Example file* `Example/index.php`
 
