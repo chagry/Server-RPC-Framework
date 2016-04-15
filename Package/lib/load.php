@@ -24,6 +24,7 @@ class load {
 			if (file_exists('sys/'.$f.'.php')) require_once 'sys/'.$f.'.php';
 			if (file_exists('configuration/'.$f.'.php')) require_once 'configuration/'.$f.'.php';
 			if (file_exists('model/'.$f.'.php')) require_once 'model/'.$f.'.php';
+			if (file_exists('controleur/'.$f.'.php')) require_once 'controleur/'.$f.'.php';
 			
 			//load interfaces before class files.
 			if (file_exists('lib/ecc/interface/'.$f.'Interface.php')) require_once 'lib/ecc/interface/'.$f.'Interface.php';
