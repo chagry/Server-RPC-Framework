@@ -12,6 +12,8 @@ Consult the website [Chagry](http://chagry.com/)
 
 ***
 
+![logo](Doc/a1.jpg)
+
 # Acknowledgments
 
 * [PHPMailer](https://github.com/Synchro/PHPMailer) The classic email sending library for PHP.
