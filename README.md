@@ -1,14 +1,10 @@
-![logo](http://chagry.com/img/css/logo-menu.png)
-
-Consult the website [Chagry](http://chagry.com/)
-
 [![Chagry Framework](http://img.youtube.com/vi/FOWqazj5Bb0/0.jpg)](http://www.youtube.com/watch?v=FOWqazj5Bb0)
 
 ***
 
 # Documentation
 
-* [**Techniques manual and video**](Doc/Server-PHP-Doc.md)
+* [**Techniques manual and video**](Doc/README.md)
 
 ***
 
@@ -26,9 +22,3 @@ Consult the website [Chagry](http://chagry.com/)
 # License
 
 Released under the [ MIT license](http://opensource.org/licenses/mit-license.php).
-
-***
-
-# Contribution
-
-You can also help us translating the documentation in other languages.

@@ -1,7 +1,3 @@
-![logo](http://chagry.com/img/css/logo-menu.png)
-
-***
-
 # Doc Server PHP
 Documentation for Server PHP framework.
 
